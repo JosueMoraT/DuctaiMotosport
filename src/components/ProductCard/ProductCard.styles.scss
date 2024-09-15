@@ -1,0 +1,32 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    max-width: 25rem;
+    text-decoration: none;
+    color: black;
+
+
+    &-img {
+        max-width: 25rem;
+    }
+
+    &-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-price {
+        font-weight: 700;
+    }
+
+    &-discount {
+        border: 1px solid #e32b2b;
+        border-radius: 4px;
+        color: #e32b2b;
+        margin-left: 0.5rem;
+        font-size: 14px;
+        padding: 0 0.125rem;
+    }
+
+ }

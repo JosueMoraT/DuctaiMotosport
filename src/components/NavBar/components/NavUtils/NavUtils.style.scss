@@ -1,0 +1,15 @@
+.nav-utils {
+    display: flex;
+
+    a {
+        display: flex;
+        align-items: center;
+        color: black;
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+
+        &:hover {
+            border-bottom: 3px solid black;
+        }
+    }
+}

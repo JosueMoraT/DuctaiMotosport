@@ -1,0 +1,18 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+        max-width: min-content;
+        font-size: 1.5rem;
+        font-weight: 400;
+
+    }
+
+    &-items-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+}
+

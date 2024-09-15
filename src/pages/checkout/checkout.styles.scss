@@ -1,0 +1,17 @@
+.checkout {
+    margin: 2rem;
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+
+        input {
+            min-width: 200px;
+            padding: 1rem;
+            font-family: inherit;
+            font-size: inherit;
+            margin-bottom: 2rem;
+        }
+    }
+}

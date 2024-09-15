@@ -1,0 +1,12 @@
+.icon-link {
+    position: relative;
+
+    &-label {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 2rem;
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}

@@ -1,0 +1,13 @@
+.navbar-menu {
+    display: flex;
+
+    a {
+        text-decoration: none;
+        color:black;
+        padding: 0.5rem 1rem;
+
+        &:hover {
+            border-bottom: 3px solid black;
+        }
+    }
+}
