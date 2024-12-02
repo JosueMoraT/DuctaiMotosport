@@ -3,7 +3,7 @@ import { Hero } from "../../components/Hero/Hero"
 import { catalogMOTOCROSS } from "../../data/catalog"
 
 const heroMOTOCROSSPage ={
-    imageUrl: 'https://motocrossactionmag.com/wp-content/uploads/2024/01/Desmo450-MX-ZOOM.jpg',
+    imageUrl: 'https://dirtbikemagazine.com/wp-content/uploads/2022/02/tum.jpg',
     imageText: 'Crosss para competir',
     headline: 'Lo mejor par los amantes de el Enduro',
     button: {

@@ -7,20 +7,16 @@ import './App.css';
 import { ShoppingCartContext } from './provider/ShoppingCartContext';
 import { useEffect, useState } from 'react';
 import { getFromLocalStorage } from './utils/localStorage';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 
-
-const heroProps = {
-  imageUrl: 'https://images.ctfassets.net/x7j9qwvpvr5s/RmQXF9JOHHJbMkcPaeVcS/451cdb4458608fadf9c4eac9f93f003e/Model-Menu-MY24-Streetfighter-V4-Supreme.png',
-  imageText: 'ducati-back',
-  headline: 'Ducati Streetfighter V4 Supreme Una edición especial limitada y numerada nacida de una nueva colaboración exclusiva',
-  button: {
-    href: '/SUPERDEPORTIVAS',
-    label: 'COMPRAR AHORA'
-  }
-};
 
 const PRODUCT_LIST_KEY = "PRODUCT_LIST_KEY";
+const ppInitialOptions ={
+  clientId: "test",
+  currency: "MXN",
+  intent: "capture",
+};
 
 function App() {
   const [productList, setProductList] = useState([]);
@@ -34,7 +30,8 @@ function App() {
   }, []);
 
   return (
-    <ShoppingCartContext.Provider value={{
+    <PayPalScriptProvider options={ppInitialOptions} >
+          <ShoppingCartContext.Provider value={{
       productList,
       setProductList
     }}>
@@ -44,6 +41,7 @@ function App() {
       <Footer />
     </div>
     </ShoppingCartContext.Provider>
+    </PayPalScriptProvider>
   );
 }
 export default App;

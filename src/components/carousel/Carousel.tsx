@@ -17,8 +17,10 @@ const Carousel: FC<CarouselProps> = ({
         <h2 className='carousel-title'>{title}</h2>
         <div className='carousel-items-container'>
             {
-                items.map((item) => {
-                    return <CarouselItem imageUrl={item.imageUrl} title={item.title}/>
+                items.map(({imageUrl, title}) => {
+                    return <CarouselItem
+                        imageUrl={imageUrl}
+                        title={title} />
                 })
             }
         </div>

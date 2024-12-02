@@ -1,15 +1,15 @@
 import { CarouselItemProps } from "../components/carousel/CarouselItem/CarouselItem";
 
 export const sales: CarouselItemProps[] =[{
-    imageUrl: 'https://pbs.twimg.com/media/Ee8Q2RVUcAEVIkP.jpg',
+    imageUrl: 'https://i.ebayimg.com/thumbs/images/g/VR8AAOSw52hnKn4k/s-l1200.jpg',
     title:'Equipo'
 }, {
-    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiebTbAyaXtg5dxlNwjbOPqzif8xjgrnZ5VA&s',
+    imageUrl: 'https://static.latamautos.com/ghost/uploads/sites/8/2019/01/29223214/mantenimiento-moto-yamaha-1.jpg',
     title:'Reparacion'
 }, {
-    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIFGaqTGNc9q3ViUB0A-Ufi2CqZnM0S5jeDg&s',
+    imageUrl: 'https://www.solucionessobreruedas.mx/assets/images/promociones/MotosNuevas1_Nov.webp',
     title:'Ofertas'
 }, {
-    imageUrl: 'https://image.made-in-china.com/2f0j00OKRtNZfrhPuq/Motorycycle-Carbon-Fiber-Parts-for-Ducati-Panigale-1199.webp',
+    imageUrl: 'https://i.pinimg.com/736x/eb/27/81/eb2781ded3e4fe804f7d45bd8bb9f3f7.jpg',
     title:'Partes'
 }];

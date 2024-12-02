@@ -1,11 +1,12 @@
 .product-page {
     display: flex;
-    flex-direction: row;
-    margin: 2rem;
+    flex-direction: column;
+    padding: 2rem;
 
     &-body {
         display: flex;
         flex-direction: row;
+        margin-bottom: 3rem;
     }
 
     &-carousel,
@@ -15,8 +16,8 @@
         height: max-content;
 
         img {
-            height: calc(50vh - 48px);
-            //aspect-ratio: 3 / 2;
+            height: calc(75vh - 48px);
+            // aspect-ratio: 3 / 2;
             width: 100%;
             object-fit: cover;
         }
@@ -44,5 +45,45 @@
         padding: 0 0.125rem;
         display: flex;
         align-items: center;
+    }
+
+    &-form {
+        display: flex;
+        padding: 2rem 0;
+        justify-content: start;
+
+        &-quantity {
+            display: flex;
+            align-items: end;
+            padding-right: 2rem;
+
+            label {
+                padding-right: 1rem;
+            }
+        }
+    }
+}
+
+.select {
+    font-size: inherit;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    max-width: max-content;
+
+    &.dark {
+        background-color: white;
+        color: black;
+        border-color: black;
+
+        &:hover {
+            color: rgb(0, 113, 174);
+            border-color: rgb(0, 113, 174);
+        }
     }
 }

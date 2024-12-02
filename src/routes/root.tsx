@@ -4,18 +4,33 @@ import { Homepage } from "../pages/homepage/Homepage";
 import { ProductPage } from "../pages/product/Product";
 import { ShoppingCartPage } from "../pages/shopping-cart/ShoppingCart";
 import { Checkout } from "../pages/checkout/checkout";
+import { SUPERMOTARDPage } from "../pages/SUPERMOTARD/SUPERMOTARD";
+import { CUATRIMOTOSPage } from "../pages/CUATRIMOTOS/CUATRIMOTOS";
+import { SUPERDEPORTIVASPage } from "../pages/SUPERDEPORTIVAS/SUPERDEPORTIVAS";
 
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: (
-        <Homepage />
+        <Homepage /> 
       ),
+    },
+    {
+      path: "SUPERMOTARD",
+      element: <SUPERMOTARDPage />
     },
     {
       path: "MOTOCROSS",
       element: <MOTOCROSSPage />
+    },
+    {
+      path: "SUPERDEPORTIVAS",
+      element: <SUPERDEPORTIVASPage />
+    },
+    {
+      path: "CUATRIMOTOS",
+      element: <CUATRIMOTOSPage />
     },
     {
       path:"product/:productId",

@@ -7,9 +7,9 @@ import './NavBar.styles.scss'
 const NavBar = () => {
     return <div className="nav-bar">
         <ImageFrame
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Ducati_red_logo.PNG/723px-Ducati_red_logo.PNG"
-        alt="logo-ducati"
-        width="50"
+        src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Yamaha-Logo.png"
+        alt="logo-yamaha"
+        width="110"
         />
         <Menu />
         <NavUtils />

@@ -11,11 +11,13 @@
     }
 
     .tema {
-        padding-top: 7%;
+        text-align: center;
+        margin: 0;
+
     }
 
     .links {
-        margin: 5%;
+        margin: 0;
         padding-bottom: 3%;
         justify-content: space-around;
         display: flex;
@@ -32,6 +34,7 @@
     .copi {
         color: rgb(74, 70, 70);
         padding-bottom: 5%;
+        text-align: center;
         
     }
 }

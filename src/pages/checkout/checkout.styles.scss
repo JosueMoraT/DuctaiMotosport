@@ -15,3 +15,32 @@
         }
     }
 }
+
+.paypal {
+    z-index: 0;
+}
+
+.checkout-modal {
+    display: flex;
+    flex-direction: column;
+
+    h2, h3 {
+        margin: 0;
+    }
+
+    &-product {
+        display: flex;
+
+        &-image {
+            margin: 1rem;
+            width: 180px;
+            min-width: 180px;
+            height: 180px;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
