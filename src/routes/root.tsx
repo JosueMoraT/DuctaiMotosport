@@ -7,6 +7,7 @@ import { Checkout } from "../pages/checkout/checkout";
 import { SUPERMOTARDPage } from "../pages/SUPERMOTARD/SUPERMOTARD";
 import { CUATRIMOTOSPage } from "../pages/CUATRIMOTOS/CUATRIMOTOS";
 import { SUPERDEPORTIVASPage } from "../pages/SUPERDEPORTIVAS/SUPERDEPORTIVAS";
+import { FavoritesPage } from "../pages/Favorites/Favorites";
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
     {
       path: "shopping-cart",
       element: <ShoppingCartPage /> 
+    },
+    {
+      path: "favorites",
+      element: <FavoritesPage />
     },
     {
       path: "checkout",

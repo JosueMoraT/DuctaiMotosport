@@ -2,13 +2,28 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    max-width: 25rem;
+    max-width: 30rem;
     text-decoration: none;
     color: black;
+    
+    &:hover{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+
 
 
     &-img {
         max-width: 25rem;
+
+        
+    }
+    
+    &-title {
+        font-size: 1.25rem; /* Tamaño de la fuente para el título */
+        font-weight: bold; /* Negrita para destacar */
+        margin-top: 0.5rem; /* Espacio superior */
+        margin-bottom: 0.5rem; /* Espacio inferior */
+        text-align: center; /* Centrado del título */
     }
 
     &-footer {

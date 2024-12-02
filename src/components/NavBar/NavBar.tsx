@@ -6,15 +6,17 @@ import './NavBar.styles.scss'
 
 const NavBar = () => {
     return <div className="nav-bar">
-        <ImageFrame
-        src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Yamaha-Logo.png"
-        alt="logo-yamaha"
-        width="110"
-        />
+         <a href="/">
+            <ImageFrame
+            src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Yamaha-Logo.png"
+            alt="logo-yamaha"
+            width="110"
+            />
+        </a>
         <Menu />
         <NavUtils />
 
     </div>
-}
+};
 
 export default NavBar;

@@ -1,0 +1,27 @@
+.button {
+    font-family: inherit;
+    font-size: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    max-width: max-content;
+
+    &-label {
+        padding-right: 10px;
+    }
+
+    &.dark {
+        background-color: white;
+        color: #e32b2b;
+        border-color: #e32b2b;
+
+        &:hover {
+            color: #550a00;
+            border-color: #550a00;
+        }
+    }
+}

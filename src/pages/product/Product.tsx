@@ -14,6 +14,11 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { Catalog } from '../../components/Catalog/Catalog';
 import { ShoppingCartContext } from '../../provider/ShoppingCartContext';
 import { setToLocalStorage } from '../../utils/localStorage';
+import { FavoritesContext } from '../../provider/FavoritesContex';
+import { catalogCUATRIMOTOS } from '../../data/catalogcuatrimotos';
+import { catalogSUPERDEPORTIVAS } from '../../data/catalogsuperdeportivas';
+import { catalogSUPERMOTARD } from '../../data/catalogsupermotard';
+import Button from '../../components/Button/Button';
 
 
 interface ProductFormProps {
@@ -21,21 +26,43 @@ interface ProductFormProps {
 }
 
 const PRODUCT_LIST_KEY = "PRODUCT_LIST_KEY";
+const FAVORITES_LIST_KEY = "FAVORITES_LIST_KEY";
 
 const ProductPage = () => {
     const { productList, setProductList } = useContext(ShoppingCartContext);
+    const { favoritesList, setFavoritesList } = useContext(FavoritesContext);
     const { register, handleSubmit } = useForm<ProductFormProps>();
     const params = useParams();
     const [ product, setProduct ] =useState<ProductCardProps>();
+    const [relatedProducts, setRelatedProducts] = useState<ProductCardProps[]>([]);
 
     useEffect(() => {
-        const result = catalogMOTOCROSS.find((product) => {
-            return product.id === params.productId
-        }); 
+        const combinedCatalogs = [
+            ...catalogMOTOCROSS,
+            ...catalogCUATRIMOTOS,
+            ...catalogSUPERDEPORTIVAS,
+            ...catalogSUPERMOTARD
+        ];
+
+        const result = combinedCatalogs.find((product) => product.id === params.productId);
+
         if (result) {
             setProduct(result);
+
+            let currentCatalog: ProductCardProps[] = [];
+            if(catalogMOTOCROSS.find(p => p.id === result.id)) {
+                currentCatalog = catalogMOTOCROSS;
+            } else if (catalogCUATRIMOTOS.find(p => p.id === result.id)) {
+                currentCatalog = catalogCUATRIMOTOS;
+            } else if (catalogSUPERDEPORTIVAS.find(p => p.id === result.id)) {
+                currentCatalog = catalogSUPERDEPORTIVAS;
+            } else if (catalogSUPERMOTARD.find(p => p.id === result.id)) {
+                currentCatalog = catalogSUPERMOTARD;
+            }
+
+            setRelatedProducts(currentCatalog.filter(p => p.id !== result.id).slice(0, 3));
         }
-    }, []);
+    }, []); 
 
     useEffect (() => {
         if (productList && productList.length > 0) {
@@ -69,6 +96,31 @@ const ProductPage = () => {
             setProductList([...productList]);
         }
         toast.info("Producto añadido al carrito");
+    };
+
+    const addProductToFavorites = () => {
+        if (!product) {
+            toast.error("Producto no disponible para añadir a favoritos");
+            return;
+        }
+    
+        let isProductInFavorites = false;
+        for (let i = 0; i < favoritesList.length; i++) {
+            if (favoritesList[i].id === product.id) {
+                isProductInFavorites = true;
+                break;
+            }
+        }
+    
+        if (isProductInFavorites) {
+            toast.warn("El producto ya está en favoritos");
+            return;
+        }
+    
+        const updatedFavorites = [...favoritesList, product];
+        setFavoritesList(updatedFavorites);
+        setToLocalStorage(FAVORITES_LIST_KEY, updatedFavorites);
+        toast.info("Producto añadido a favoritos");
     };
 
     if (!product) {
@@ -111,12 +163,22 @@ const ProductPage = () => {
                         </select>
                     </div>
                     <input type='submit' value="Agregar al carrito" className='dark' />
+                    <Button type="button" onClick={addProductToFavorites} label="Añadir a favoritos" className="dark"
+                    />
                 </form>
             </div>
         </div>
-        <label>Productos relacionados:</label>
-        <Catalog productList={catalogMOTOCROSS.slice(1, 9)}/>
-        <ToastContainer />
+
+        <div className="product-page-related">
+                    <label className='product-page-related-title'>Productos relacionados:</label>
+                    <Catalog productList={relatedProducts} />
+                </div>
+
+                <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} 
+                closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover 
+                className="custom-toast-container" toastClassName="custom-toast"/>
+
+
     </div>
 };
 

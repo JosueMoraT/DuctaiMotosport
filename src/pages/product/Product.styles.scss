@@ -2,6 +2,45 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+
+    &-carousel {
+        width: 50%;
+        max-width: 600px;
+        padding-right: 1rem;
+
+
+        img {
+            height: 350px;
+            object-fit: contain;
+            width: 100%;
+        }
+    }
+    &-detail-title {
+        font-weight: 750;
+        color: #040404;
+        margin-bottom: 1rem;
+    }
+
+    &-detail-price {
+        font-size: 2rem;
+        color: #e32b2b;
+    }
+
+    &-detail-discount {
+        font-size: 1.5rem;
+        border: 1px solid #e32b2b;
+        border-radius: 4px;
+        color: #e32b2b;
+        padding: 0 0.25rem;
+        background-color: #f5e9e9;
+    }
+
+    
 
     &-body {
         display: flex;
